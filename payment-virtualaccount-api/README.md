@@ -4,6 +4,6 @@
 
 ## 연동 문서
 
-- [결제 취소 연동 가이드](https://docs.tosspayments.com/guides/apis/virtual-account)
-- [가상계좌 발급 요청 API](https://docs.tosspayments.com/reference#카드-번호-결제)
+- [결제 취소 연동 가이드](https://docs.tosspayments.com/common/apis/cancel-payment)
+- [가상계좌 발급 요청 API](https://docs.tosspayments.com/guides/payment/virtual-account-api)
 
