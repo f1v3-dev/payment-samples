@@ -7,7 +7,7 @@ $paymentKey = $_GET['paymentKey'];
 $orderId = $_GET['orderId'];
 $amount = $_GET['amount'];
 
-$secretKey = 'test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy'; 
+$secretKey = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'; 
 
 $url = 'https://api.tosspayments.com/v1/payments/confirm';
 

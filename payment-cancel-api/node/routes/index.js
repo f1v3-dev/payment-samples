@@ -4,7 +4,7 @@ var uuid = require("uuid").v4;
 
 var router = express.Router();
 
-var secretKey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy";
+var secretKey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R";
 
 router.get("/cancel", function (req, res) {
   let paymentKey = "";
@@ -22,27 +22,23 @@ router.get("/cancel", function (req, res) {
   let refundableAmount = 300;
 
   got
-    .post(
-      "https://api.tosspayments.com/v1/payments/" + paymentKey + "/cancel",
-      {
-        headers: {
-          Authorization:
-            "Basic " + Buffer.from(secretKey + ":").toString("base64"),
-          "Content-Type": "application/json",
+    .post("https://api.tosspayments.com/v1/payments/" + paymentKey + "/cancel", {
+      headers: {
+        Authorization: "Basic " + Buffer.from(secretKey + ":").toString("base64"),
+        "Content-Type": "application/json",
+      },
+      json: {
+        cancelReason: cancelReason,
+        cancelAmount: cancelAmount,
+        refundReceiveAccount: {
+          bank: bank,
+          accountNumber: accountNumber,
+          holderName: holderName,
         },
-        json: {
-          cancelReason: cancelReason,
-          cancelAmount: cancelAmount,
-          refundReceiveAccount: {
-            bank: bank,
-            accountNumber: accountNumber,
-            holderName: holderName,
-          },
-          refundableAmount: refundableAmount,
-        },
-        responseType: "json",
-      }
-    )
+        refundableAmount: refundableAmount,
+      },
+      responseType: "json",
+    })
     .then(function (response) {
       res.render("cancel", {
         isSuccess: true,

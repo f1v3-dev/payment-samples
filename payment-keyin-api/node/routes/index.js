@@ -4,7 +4,7 @@ var uuid = require("uuid").v4;
 
 var router = express.Router();
 
-var secretKey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy";
+var secretKey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R";
 
 router.get("/keyin", function (req, res) {
   let orderId = "keyin-" + uuid();
@@ -24,8 +24,7 @@ router.get("/keyin", function (req, res) {
   got
     .post("https://api.tosspayments.com/v1/payments/key-in", {
       headers: {
-        Authorization:
-          "Basic " + Buffer.from(secretKey + ":").toString("base64"),
+        Authorization: "Basic " + Buffer.from(secretKey + ":").toString("base64"),
         "Content-Type": "application/json",
       },
       json: {

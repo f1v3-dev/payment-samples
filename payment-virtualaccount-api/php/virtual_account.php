@@ -22,7 +22,7 @@ $type = "소득공제";
 $registrationNumber  = "01000001234";
 
 
-$secretKey = 'test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy'; 
+$secretKey = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'; 
 
 $url = 'https://api.tosspayments.com/v1/virtual-accounts';
 

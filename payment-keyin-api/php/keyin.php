@@ -15,7 +15,7 @@ $customerEmail = "customer@email.com";
 $customerName = "박토스";
 $orderName = "토스 키인 결제";
 
-$secretKey = 'test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy'; 
+$secretKey = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'; 
 
 $url = 'https://api.tosspayments.com/v1/payments/key-in';
 
