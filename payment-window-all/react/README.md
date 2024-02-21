@@ -1,6 +1,6 @@
-# 토스페이먼츠 결제창 React 샘플 프로젝트
+# payment-window-all/react
 
-결제창 JavaScript SDK로 결제 과정을 구현한 JSP 샘플 프로젝트입니다. 자세한 연동 방법과 결제 과정은 [공식 연동 문서](https://docs.tosspayments.com/guides/payment/integration)에서 확인하세요.
+결제창 JavaScript SDK로 결제 과정을 구현한 React 샘플 프로젝트입니다. 자세한 연동 방법과 결제 과정은 [공식 연동 문서](https://docs.tosspayments.com/guides/payment/integration)에서 확인하세요.
 
 ## 실행하기
 

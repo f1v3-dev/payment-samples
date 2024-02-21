@@ -1,4 +1,4 @@
-# 결제창 Node.js + VanillaJS 샘플 프로젝트
+# payment-window-all/node-vanillajs
 
 결제창 JavaScript SDK로 결제 과정을 구현한 Node.js 샘플 프로젝트입니다. 서버는 Express로 구성되었습니다. 자세한 연동 방법과 결제 과정은 [공식 연동 문서](https://docs.tosspayments.com/guides/payment/integration)에서 확인하세요.
 
