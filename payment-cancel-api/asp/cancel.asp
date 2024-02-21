@@ -1,11 +1,10 @@
 <%@ Language="VBScript" CODEPAGE="65001"%>
 
-
 <!DOCTYPE html>
 
-<!--#include file="json2.asp"--> 
-<!--#include file="base64.asp"--> 
-
+<!--#include file="json2.asp"-->
+<!--#include file="base64.asp"-->
+<!-- prettier-ignore -->
 <%
 	
 call initCodecs
@@ -18,18 +17,13 @@ bank = "신한"
 accountNumber = "12345678901234"
 holderName = "홍길동"
 
-refundableAmount = null
-
-secretkey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy:"
+secretkey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R:"
 
 url = "https://api.tosspayments.com/v1/payments/" & paymentKey & "/cancel"
 
 data = "{""cancelReason"" : """ & cancelReason & """, ""cancelAccount"" : """ & cancelAccount & """," &_
     """refundReceiveAccount"" : {""bank"" : """ & bank & """," &_
-    """accountNumber"" : """ & accountNumber & """, ""holderName"" : """ & holderName & """}," &_
-    """refundableAmount"" : """ & refundableAmount & """}"
-
-
+    """accountNumber"" : """ & accountNumber & """, ""holderName"" : """ & holderName & """}}"
 
 authorization = "Basic " & base64Encode(secretkey)
 
@@ -46,33 +40,27 @@ httpCode = req.status
 
 %>
 
-
 <html lang="ko">
-<head>
+  <head>
     <title>취소 성공</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-</head>
-<body>
-<section>
-    <%
-        if httpCode=200  then %>
-        <h1>취소 성공</h1>
-        <p>결과 데이터 : <%= req.responseText %></p>
-        <p>orderName : <%= myJSON.orderName%></p>
-        <p>method : <%= myJSON.method%></p>
-        <p>method : <%= myJSON.cancels.get(0).cancelReason%></p>
-        
-       <%
-     else  %>
-        <h1>결제 실패</h1>
-        <p>에러메시지 :  <%= myJSON.message%></p>
-        <span>에러코드:  <%= myJSON.code%></span>
-       <%
-    end if
-    %>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  </head>
+  <body>
+    <section>
+      <% if httpCode=200 then %>
+      <h1>취소 성공</h1>
+      <p>결과 데이터 : <%= req.responseText %></p>
+      <p>orderName : <%= myJSON.orderName%></p>
+      <p>method : <%= myJSON.method%></p>
+      <p>method : <%= myJSON.cancels.get(0).cancelReason%></p>
 
-</section>
-</body>
+      <% else %>
+      <h1>결제 실패</h1>
+      <p>에러메시지 : <%= myJSON.message%></p>
+      <span>에러코드: <%= myJSON.code%></span>
+      <% end if %>
+    </section>
+  </body>
 </html>

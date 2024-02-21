@@ -13,17 +13,12 @@ $bank = "신한";
 $accountNumber = "12345678901234";
 $holderName = "홍길동";
 
-//중복 취소를 막기위해 취소 가능금액을 전송
-$refundableAmount = 300;
-
-
-$secretKey = 'test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy'; 
+$secretKey = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'; 
 
 $url = 'https://api.tosspayments.com/v1/payments/'. $paymentKey .'/cancel';
 
 $data = ['cancelReason' => $cancelReason, 'cancelAmount' => $cancelAmount,
-'refundReceiveAccount' => ['bank' => $bank, 'accountNumber' => $accountNumber, 'holderName' => $holderName],
-'refundableAmount' => $refundableAmount];
+'refundReceiveAccount' => ['bank' => $bank, 'accountNumber' => $accountNumber, 'holderName' => $holderName]];
 
 $credential = base64_encode($secretKey . ':');
 

@@ -1,3 +1,5 @@
+<!-- prettier-ignore -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Base64"%>
@@ -26,11 +28,8 @@
   String bank = "신한";
   String accountNumber = "12345678901234";
   String holderName = "홍길동";
-
-  //중복 취소를 막기위해 취소 가능금액을 전송
-  String refundableAmount = null;
   
-  String secretKey = "test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy:";
+  String secretKey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R:";
   
   Encoder encoder = Base64.getEncoder(); 
   byte[] encodedBytes = encoder.encode(secretKey.getBytes("UTF-8"));
@@ -54,8 +53,6 @@
   refundReceiveAccount.put("holderName", holderName);
 
   obj.put("refundReceiveAccount", refundReceiveAccount);
-  obj.put("refundableAmount", refundableAmount);
-  
     
   OutputStream outputStream = connection.getOutputStream();
   outputStream.write(obj.toString().getBytes("UTF-8"));
@@ -73,34 +70,25 @@
 
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <title>취소 성공</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-</head>
-<body>
-<section>
-    <%
-    if (isSuccess) { %>
-        <h1>취소 성공</h1>
-        <p>결과 데이터 : <%= jsonObject.toJSONString() %></p>
-        <p>orderName : <%= jsonObject.get("orderName") %></p>
-        <p>method : <%= jsonObject.get("method") %></p>
-        <p>cancels -> cancelReason : <%
-        JSONArray cancels = ((JSONArray)jsonObject.get("cancels"));
-        JSONObject cancel = (JSONObject) cancels.iterator().next();
-        %>
-        <%=cancel.get("cancelReason") %></p>
-        
-    <%} else { %>
-        <h1>취소 실패</h1>
-        <p><%= jsonObject.get("message") %></p>
-        <span>에러코드: <%= jsonObject.get("code") %></span>
-        <%
-    }
-    %>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  </head>
+  <body>
+    <section>
+      <% if (isSuccess) { %>
+      <h1>취소 성공</h1>
+      <p>결과 데이터 : <%= jsonObject.toJSONString() %></p>
+      <p>orderName : <%= jsonObject.get("orderName") %></p>
+      <p>method : <%= jsonObject.get("method") %></p>
+      <p>cancels -> cancelReason : <% JSONArray cancels = ((JSONArray)jsonObject.get("cancels")); JSONObject cancel = (JSONObject) cancels.iterator().next(); %> <%=cancel.get("cancelReason") %></p>
 
-</section>
-</body>
+      <%} else { %>
+      <h1>취소 실패</h1>
+      <p><%= jsonObject.get("message") %></p>
+      <span>에러코드: <%= jsonObject.get("code") %></span>
+      <% } %>
+    </section>
+  </body>
 </html>
-

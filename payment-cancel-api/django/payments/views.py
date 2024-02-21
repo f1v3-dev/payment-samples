@@ -20,9 +20,6 @@ def cancelapi(request):
   bank = "국민"
   accountNumber = "12345678901234"
   holderName = "홍길동"
-
-	#중복 취소를 막기위해 취소 가능금액을 전송
-  refundableAmount = 300
   
   url = "https://api.tosspayments.com/v1/payments/"
   secertkey = "test_sk_D4yKeq5bgrpKRd0JYbLVGX0lzW6Y"
@@ -42,7 +39,6 @@ def cancelapi(request):
     #    "accountNumber": accountNumber,
     #    "holderName": holderName
     #    }
-    #"refundableAmount": refundableAmount
   }
   
   res = requests.post(url+paymentKey+"/cancel", data=json.dumps(params), headers=headers)

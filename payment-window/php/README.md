@@ -2,11 +2,20 @@
 
 PHP 를 이용한 결제창 샘플입니다.
 
+## 준비하기
 
+환경에 맞춰 [php를 설치하세요](https://www.php.net/manual/en/install.php).
 
-## 테스트
-로컬에 웹서버 및 php 관련 설정을 완료한 후 
+```
+brew install php
+```
 
-샘플을 웹서버의 root 폴더에 복사하신후 
+## 실행하기
 
-http://127.0.0.1/index.html 주소에서 테스트 가능합니다.
+1. php 서버를 실행합니다.
+
+   ```sh
+   $ php -S localhost:4242 # 서버 실행
+   ```
+
+2. http://localhost:4242/ 에서 샘플 프로젝트를 확인하세요.
