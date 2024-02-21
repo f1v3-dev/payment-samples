@@ -1,6 +1,6 @@
-# payment-direct-window/asp
+# payment-easypay-window/asp
 
-ASP를 이용한 카드사 결제창 샘플입니다.
+ASP를 이용한 간편결제사 결제창 샘플입니다.
 
 ## 준비하기
 

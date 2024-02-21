@@ -8,13 +8,18 @@ Django를 이용한 결제 취소 샘플 코드입니다.
 
 ## 실행하기
 
-1. 샘플 코드 레포지토리를 클론(Clone)하고 Django 폴더로 진입하세요.
+1. `/payments/templates/payments/cancelapi.html` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
 
-   ```sh
-   $ git clone https://github.com/tosspayments/payment-samples # 샘플 프로젝트 클론
-   $ cd payment-samples/payment-cancel-api/django
-   ```
+2. `/payments` 앱과 아래 설명을 참조해서 기존 프로젝트에 샘플 코드를 추가하세요.
 
-2. `/payments/templates/payments/cancelapi.html` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
+## 기본 설명
 
-3. `/payments` 앱을 참조해서 `templates/payments`, `urls.py`, `views.py` 를 원하는 프로젝트에 사용하세요.
+패키지 종속성 관리를 위해 requirements.txt 를 활용 했어요.
+
+기존에 운영하시던 프로젝트에 적용하실때 참조하실 수 있도록,
+
+- 프로젝트 메인페이지는 분리된 app 인 main_page 에
+- 결제 샘플은 분리된 app 인 payments 에 위치 시켰어요.
+- 프로젝트 settings.py, urls.py 에서 app 설정을 확인 해주세요.
+
+결제 샘플 `app/payments`를 참조해서, 프로젝트 앱에 templates/payments, urls.py, views.py 를 붙여넣기 해주세요.

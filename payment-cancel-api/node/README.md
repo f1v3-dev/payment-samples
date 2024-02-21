@@ -13,20 +13,13 @@ $ v16.15.1
 
 ## 실행하기
 
-1. 샘플 코드 레포지토리를 클론(Clone)하고 Node 폴더로 진입하세요.
+1. `/routes/index.js` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
 
-   ```sh
-   $ git clone https://github.com/tosspayments/payment-samples # 샘플 프로젝트 클론
-   $ cd payment-samples/payment-cancel-api/node
-   ```
-
-2. `/routes/index.js` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
-
-3. 의존성 패키지를 다운로드하고 서버를 실행합니다.
+2. 의존성 패키지를 다운로드하고 서버를 실행합니다.
 
    ```sh
    $ npm install # 의존성 패키지 다운로드
    $ node app.js # 서버 실행
    ```
 
-서버가 실행 된 후, `http://localhost:8080/cancel`으로 접속해서 테스트할 수 있습니다.
+3. 서버가 실행 된 후, `http://localhost:8080/cancel`으로 접속해서 테스트할 수 있습니다.
