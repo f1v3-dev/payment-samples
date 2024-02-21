@@ -7,7 +7,7 @@
 
 
 <%
- String message = request.getParameter("message");
+  String message = request.getParameter("message");
   String code = request.getParameter("code");
 %>
 

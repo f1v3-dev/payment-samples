@@ -10,7 +10,7 @@
 <%@ page import="java.io.*" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>
 <%
-	InputStream responseStream = request.getInputStream();
+    InputStream responseStream = request.getInputStream();
     Reader reader = new InputStreamReader(responseStream, StandardCharsets.UTF_8);
     
     JSONParser parser = new JSONParser();
