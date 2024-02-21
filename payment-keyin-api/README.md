@@ -7,3 +7,4 @@
 - [카드 번호 결제 연동 가이드](https://docs.tosspayments.com/guides/apis/key-in)
 - [카드 번호 결제 API](https://docs.tosspayments.com/reference#카드-번호-결제)
 
+기능 및 구현에 대해 궁금한 점이 있다면 [1:1 채팅](https://discord.com/invite/VdkfJnknD9)이나 [토스페이먼츠 기술지원 팀 이메일](techsupport@tosspayments.com)로 문의해주세요.
