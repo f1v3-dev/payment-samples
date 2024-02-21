@@ -4,12 +4,42 @@
 
 <!--#include file="json2.asp"-->
 <!--#include file="base64.asp"-->
+<!-- prettier-ignore -->
+<%
+	
+call initCodecs
+paymentKey	= "" 
+cancelReason	= "고객 변심"
 
-<% call initCodecs paymentKey = "" cancelReason = "고객 변심" cancelAccount = 300 bank = "신한" accountNumber = "12345678901234" holderName = "홍길동" refundableAmount = null secretkey =
-"test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R:" url = "https://api.tosspayments.com/v1/payments/" & paymentKey & "/cancel" data = "{""cancelReason"" : """ & cancelReason & """, ""cancelAccount"" : """ &
-cancelAccount & """," &_ """refundReceiveAccount"" : {""bank"" : """ & bank & """," &_ """accountNumber"" : """ & accountNumber & """, ""holderName"" : """ & holderName & """}," &_
-"""refundableAmount"" : """ & refundableAmount & """}" authorization = "Basic " & base64Encode(secretkey) set req = Server.CreateObject("MSXML2.ServerXMLHTTP") req.open "POST", url, false
-req.setRequestHeader "Authorization", authorization req.setRequestHeader "Content-Type", "application/json;charset=UTF-8" req.send data set myJSON = JSON.parse(req.responseText) httpCode = req.status
+cancelAccount	= 300
+
+bank = "신한"
+accountNumber = "12345678901234"
+holderName = "홍길동"
+
+refundableAmount = null
+
+secretkey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R:"
+
+url = "https://api.tosspayments.com/v1/payments/" & paymentKey & "/cancel"
+
+data = "{""cancelReason"" : """ & cancelReason & """, ""cancelAccount"" : """ & cancelAccount & """," &_
+    """refundReceiveAccount"" : {""bank"" : """ & bank & """," &_
+    """accountNumber"" : """ & accountNumber & """, ""holderName"" : """ & holderName & """}}"
+
+authorization = "Basic " & base64Encode(secretkey)
+
+set req = Server.CreateObject("MSXML2.ServerXMLHTTP")
+req.open "POST", url, false
+req.setRequestHeader "Authorization", authorization
+req.setRequestHeader "Content-Type", "application/json;charset=UTF-8"
+req.send data
+
+
+set myJSON = JSON.parse(req.responseText)
+
+httpCode = req.status
+
 %>
 
 <html lang="ko">
