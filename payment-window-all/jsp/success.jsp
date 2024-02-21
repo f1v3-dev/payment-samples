@@ -17,8 +17,8 @@
 
 <%
  // ------ 결제 승인 API 호출 ------
- // @docs https://docs.tosspayments.com/guides/payment-widget/integration#3-결제-승인하기
-  // TODO: 개발자센터에 로그인해서 내 결제위젯 연동 키 > 시크릿 키를 입력하세요. 시크릿 키는 외부에 공개되면 안돼요.
+ // @docs https://docs.tosspayments.com/guides/payment/integration#3-결제-승인하기
+  // TODO: 개발자센터에 로그인해서 내 API 개별 연동 키 > 시크릿 키를 입력하세요. 시크릿 키는 외부에 공개되면 안돼요.
   // @docs https://docs.tosspayments.com/reference/using-api/api-keys
   String secretKey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R:";
   
@@ -113,7 +113,7 @@
             <div class="p-grid-col text--right"><%= jsonObject.get("code") %></div>
           </div>
           <div class="p-grid">
-            <button class="button p-grid-col5" onclick="location.href='https://docs.tosspayments.com/guides/payment-widget/integration';">연동 문서</button>
+            <button class="button p-grid-col5" onclick="location.href='https://docs.tosspayments.com/guides/payment/integration';">연동 문서</button>
             <button class="button p-grid-col5" onclick="location.href='https://discord.gg/A4fRFXQhRu';"
               style="background-color: #e8f3ff;color:#1b64da ">실시간 문의</button>
           </div>   

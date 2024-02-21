@@ -1,22 +1,16 @@
-# Python - Django Project
+# payment-cancel-api/django
 
-## 기본설명
-```
-Python - Django 환경을 먼저 준비 해주세요.
+## 준비하기
 
-패키지 종속성 관리를 위해 requirements.txt 를 활용 했어요.
+[Python](https://www.python.org/downloads/), [Django](https://www.djangoproject.com/download/), [pip](https://pip.pypa.io/en/stable/installation/)를 설치하세요.
 
-기존에 운영하시던 프로젝트에 적용하실때 참조하실 수 있도록,
-* 프로젝트 메인페이지는 분리된 app 인 main_page 에
-* 결제 샘플은 분리된 app 인 payments 에 위치 시켰어요.
-** 프로젝트 settings.py, urls.py 에서 app 설정을 확인 해주세요.
+1. 샘플 코드 레포지토리를 클론(Clone)하고 Django 폴더로 진입하세요.
 
-결제 샘플 app 인 payments 를 참조해서, 
-프로젝트에서 원하시는 이름의 app을 추가하신 이후에 templates/payments, urls.py, views.py 를 붙여넣기 해주세요. 
+   ```sh
+   $ git clone https://github.com/tosspayments/payment-samples # 샘플 프로젝트 클론
+   $ cd payment-samples/payment-cancel-api/django
+   ```
 
-샘플에는 CSS 를 적용해두었어요. 
-* static/payments 내에 CSS 폴더/파일을 추가 하였어요. 
-* html 내에 아래와 같이 CSS 추가 적용 하였어요.
-** {% load static %}
-** <link rel="stylesheet" type="text/css" href="{% static 'payments/bulma/bulma.min.css' %}"/>
-```
+2. `/payments/templates/payments/cancelapi.html` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
+
+3. `/payments` 앱을 참조해서 `templates/payments`, `urls.py`, `views.py` 를 원하는 프로젝트에 사용하세요.

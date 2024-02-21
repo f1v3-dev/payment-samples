@@ -14,7 +14,7 @@ export function SuccessPage() {
       paymentKey: searchParams.get("paymentKey"),
     };
 
-    // TODO: 개발자센터에 로그인해서 내 결제위젯 연동 키 > 시크릿 키를 입력하세요. 시크릿 키는 외부에 공개되면 안돼요.
+    // TODO: 개발자센터에 로그인해서 내 API 개별 연동 키 > 시크릿 키를 입력하세요. 시크릿 키는 외부에 공개되면 안돼요.
     // @docs https://docs.tosspayments.com/reference/using-api/api-keys
     const secretKey = "test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R";
 
@@ -81,7 +81,7 @@ export function SuccessPage() {
           </div>
         </div>
         <div className="p-grid-col">
-          <Link to="https://docs.tosspayments.com/guides/payment-widget/integration">
+          <Link to="https://docs.tosspayments.com/guides/payment/integration">
             <button className="button p-grid-col5">연동 문서</button>
           </Link>
           <Link to="https://discord.gg/A4fRFXQhRu">

@@ -1,10 +1,6 @@
 # 결제창 Node.js + VanillaJS 샘플 프로젝트
 
-결제창 JavaScript SDK로 결제 과정을 구현한 Node.js 샘플 프로젝트입니다. 서버는 Express로 구성되었습니다. 자세한 연동 방법과 결제 과정은 [공식 연동 문서](https://docs.tosspayments.com/guides/payment-widget/integration)에서 확인하세요.
-
-## 데모
-
-[데모](https://codesandbox.io/p/sandbox/payment-widget-js-sample-zr9vkt)
+결제창 JavaScript SDK로 결제 과정을 구현한 Node.js 샘플 프로젝트입니다. 서버는 Express로 구성되었습니다. 자세한 연동 방법과 결제 과정은 [공식 연동 문서](https://docs.tosspayments.com/guides/payment/integration)에서 확인하세요.
 
 ## 준비하기
 
@@ -22,8 +18,8 @@ Node.js가 없다면 [Node.js 홈페이지](https://nodejs.org/ko/download/)에�
 1. 결제창 샘플 프로젝트 레포지토리를 클론(Clone)하고 Node 폴더로 진입하세요.
 
    ```sh
-   $ git clone https://github.com/tosspayments/payment-widget-sample # 샘플 프로젝트 클론
-   $ cd payment-widget-sample/node-vanillajs
+   $ git clone https://github.com/tosspayments/payment-samples # 샘플 프로젝트 클론
+   $ cd payment-samples/payment-window-all/node-vanillajs
    ```
 
 2. 의존성 패키지를 다운로드하고 서버를 실행합니다.

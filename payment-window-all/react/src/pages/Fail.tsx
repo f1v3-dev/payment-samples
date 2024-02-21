@@ -26,7 +26,7 @@ export function FailPage() {
       </div>
 
       <div className="p-grid-col">
-        <Link to="https://docs.tosspayments.com/guides/payment-widget/integration">
+        <Link to="https://docs.tosspayments.com/guides/payment/integration">
           <button className="button p-grid-col5">연동 문서</button>
         </Link>
         <Link to="https://discord.gg/A4fRFXQhRu">
