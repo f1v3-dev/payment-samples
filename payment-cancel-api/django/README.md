@@ -8,7 +8,7 @@ Django를 이용한 결제 취소 샘플 코드입니다.
 
 ## 실행하기
 
-1. `/payments/templates/payments/cancelapi.html` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
+1. `/payments/views.py` 파일에 테스트하고 싶은 `paymentKey`, `secretKey`를 넣으세요.
 
 2. `/payments` 앱과 아래 설명을 참조해서 기존 프로젝트에 샘플 코드를 추가하세요.
 

@@ -1,6 +1,6 @@
-# payment-inquiry-api/rubyonrails
+# payment-keyin-api/rubyonrails
 
-Ruby on Rails를 이용한 결제 조회 샘플 코드입니다.
+Ruby on Rails를 이용한 결제 취소 샘플 코드입니다.
 
 ## 준비하기
 
