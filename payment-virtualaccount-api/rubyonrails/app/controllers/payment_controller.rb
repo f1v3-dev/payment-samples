@@ -3,9 +3,6 @@ class PaymentController < ApplicationController
   def inquiryapi
     datetime = Time.now.to_i
     paymentKey = "q2Dv9ZPM7zXLkKEypNArWkaKzB9KArlmeaxYG5R4Jo6bnOwB"
-
-    amount = 50000
-    orderId
       
     options = {
       headers: {
@@ -18,7 +15,7 @@ class PaymentController < ApplicationController
         customerEmail: "customer@email.com",
         orderName: "토스 가상계좌 결제",
         bank: "우리"
-      }
+    }.to_json
     }
       
 	begin
