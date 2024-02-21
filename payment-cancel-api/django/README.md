@@ -1,8 +1,12 @@
 # payment-cancel-api/django
 
+Django를 이용한 결제 취소 샘플 코드입니다.
+
 ## 준비하기
 
 [Python](https://www.python.org/downloads/), [Django](https://www.djangoproject.com/download/), [pip](https://pip.pypa.io/en/stable/installation/)를 설치하세요.
+
+## 실행하기
 
 1. 샘플 코드 레포지토리를 클론(Clone)하고 Django 폴더로 진입하세요.
 
